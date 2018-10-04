@@ -39,8 +39,37 @@ private static final int TAM = 100;
         
         mostrar("Cantidadde Nros Pares: " + getCantPares(Nros,cant) ); 
         mostrar("Cantidadde Nros Impares: " + getCantImpares(Nros,cant) ); 
-        
+        muestraNrosPrimos(Nros, cant);
     }
+
+    public static void muestraNrosPrimos(int [] Numeros,int cantidad)
+    {        
+        for (int i = 0; i < cantidad; i++) {
+            if( esPrimo(Numeros[i], 2)==true)
+            {
+                mostrar("El Nro [" + i + "]: " + Numeros[i] + " Es Primo.");
+            }            
+        }
+    }
+    
+    private static boolean esPrimo(int num, int divisor)
+    {
+            if(num/2 < divisor)
+            {
+                return true;
+            } 
+            else
+            {
+                if(num%divisor==0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return esPrimo(num, divisor+1);
+                }
+            }
+    }    
     
     public static int getCantPares(int [] Numeros,int cantidad)
     {

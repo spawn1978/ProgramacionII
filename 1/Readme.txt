@@ -1,6 +1,6 @@
 OK - 1. Ingresar 5 numeros enteros por consola, luego calcular y mostrar el valor maximo, minimo y promedio
 
-2. mostrar por pantalla todos los nros primos que haya hasta un nro que ingrese el usuario pro consola.
+OK - 2. mostrar por pantalla todos los nros primos que haya hasta un nro que ingrese el usuario por consola.
 
 OK - 3. crear una funcion estatica que permita devolver el mayor de 2 numeros que recibe por parametros
 
