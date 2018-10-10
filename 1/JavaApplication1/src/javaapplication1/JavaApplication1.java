@@ -43,7 +43,7 @@ private static final int TAM = 100;
     }
 
     public static void muestraNrosPrimos(int [] Numeros,int cantidad)
-    {        
+    {       
         for (int i = 0; i < cantidad; i++) {
             if( esPrimo(Numeros[i], 2)==true)
             {
