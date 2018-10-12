@@ -20,20 +20,77 @@ public class Auto
         //Auto es clase dependiente de rueda    
     //</editor-fold>
     //<editor-fold desc="Atributos">
-    private String _fabricante;
+    private eFabricante _fabricante;
     private Rueda _ruedadd;
     private Rueda _ruedadi;
     private Rueda _ruedatd;
     private Rueda _ruedati;
+    public static int contador;
+    private int kilometrosRecorridos;
     //</editor-fold>
+    
     //<editor-fold desc="constructor">
     public Auto()
     {
-        this._fabricante="sin fabricante";
+        //this._fabricante=eFabricante.FIAT;
+        int MarcaRandom=(int) ( Math.random()* eFabricante.values().length );        
+        this._fabricante=eFabricante.values( ) [MarcaRandom];
+        
         this._ruedadd=new Rueda();
         this._ruedadi=new Rueda();
         this._ruedatd=new Rueda();
         this._ruedati=new Rueda();
+        contador++;
+    }
+    
+    static 
+    {//esto se ejecuta antes de inicializarse un objeto de la clase Auto
+        contador=0;
+    }
+
+    //</editor-fold>
+    
+    
+    //<editor-fold desc="getters">
+    public eFabricante getFabricante()
+    {
+        return this._fabricante;
+    }
+
+    public int getKilometrosRecorridos()
+    {
+        return this.kilometrosRecorridos;
+    }
+    
+    
+    //</editor-fold >
+
+    //<editor-fold desc="setters">
+    public void setKilometrosRecorridos(int kilometrosRecorridos)
+    {
+        this.kilometrosRecorridos = kilometrosRecorridos;
+    }
+    
+    //</editor-fold>
+    
+    //<editor-fold desc="Metodos">
+    
+    public void VolverACero()
+    {
+        this.kilometrosRecorridos = 0;
+    }
+    
+    public void MostrarCarrera()
+    {
+        System.out.println(this.getFabricante() + " Km: " + this.getKilometrosRecorridos()  );
+    }
+    
+    public void saludo()
+    {
+        //this._fabricante=eFabricante.FIAT;
+        System.out.println("Hola " + this.getFabricante());
+        System.out.println("Contador: " + contador);
+
     }
     //</editor-fold>
 
