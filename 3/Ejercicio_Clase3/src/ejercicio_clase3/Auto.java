@@ -13,8 +13,9 @@ public class Auto
 {
     //<editor-fold desc="Teoria clases">
         //composicion o agregacion compuesta... es cuando una clase agrega a otra clase.
-        //Agregacion =>  y el tiempo de vida no es coincidente... si se destruye un objeto el otro puede seguir existiendo
-        //compsicion => no puede seguir existiendo 
+        //Agregacion (Rombo)=>  y el tiempo de vida no es coincidente... si se destruye un objeto el otro puede seguir existiendo
+        //composicion (Rombo lleno)=> no puede seguir existiendo  (sin ruedas no existe auto)
+        //Asociacion (auto y chofer) => relacion entre 2 clases que no indica herencia ni agregacion
 
         //Auto es clase dependiente de rueda    
     //</editor-fold>
