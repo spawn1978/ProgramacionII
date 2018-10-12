@@ -41,12 +41,52 @@ public class Carrera
     
     public void mostrarCarrera()
     {
+        //sin vectores
+        int NroAuto=1;
+        Auto AutoGanador=auto1;
+        
+        if ( AutoGanador.getKilometrosRecorridos() < auto2.getKilometrosRecorridos() )
+        {            
+            AutoGanador=auto2;
+            NroAuto=2;
+        }
+        if ( AutoGanador.getKilometrosRecorridos() < auto3.getKilometrosRecorridos() )
+        {            
+            AutoGanador=auto3;
+            NroAuto=3;
+        }
+        if ( AutoGanador.getKilometrosRecorridos() < auto4.getKilometrosRecorridos() )
+        {            
+            AutoGanador=auto4;
+            NroAuto=4;
+        }
+        if ( AutoGanador.getKilometrosRecorridos() < auto5.getKilometrosRecorridos() )
+        {            
+            AutoGanador=auto5;
+            NroAuto=5;
+        }
+        if ( AutoGanador.getKilometrosRecorridos() < auto6.getKilometrosRecorridos() )
+        {            
+            AutoGanador=auto6;
+            NroAuto=6;
+        }
+        
+        System.out.println("Ganador: " + AutoGanador.getFabricante() + " KM: " + AutoGanador.getKilometrosRecorridos() + " Nro de Auto: " + NroAuto);
+        System.out.println("------------ ");
+        System.out.println("Km por cada corredor: ");
+        System.out.println("Auto1: " + auto1.getKilometrosRecorridos());
+        System.out.println("Auto2: " + auto2.getKilometrosRecorridos());
+        System.out.println("Auto3: " + auto3.getKilometrosRecorridos());
+        System.out.println("Auto4: " + auto4.getKilometrosRecorridos());
+        System.out.println("Auto5: " + auto5.getKilometrosRecorridos());
+        System.out.println("Auto6: " + auto6.getKilometrosRecorridos());
+/*
         //falta mostrar
        for(int i=0 ;i<AutosCorredores.length;i++)
         {
             AutosCorredores[i]=new Auto(); //Inicializo cada posicion del vector con un Auto
         }    
-  
+  */
     }
     
     public void porTiempo(int minutos)
