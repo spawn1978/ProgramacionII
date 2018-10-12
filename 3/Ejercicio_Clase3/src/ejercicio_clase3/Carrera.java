@@ -71,6 +71,8 @@ public class Carrera
             NroAuto=6;
         }
         
+        
+        
         System.out.println("Ganador: " + AutoGanador.getFabricante() + " KM: " + AutoGanador.getKilometrosRecorridos() + " Nro de Auto: " + NroAuto);
         System.out.println("------------ ");
         System.out.println("Km por cada corredor: ");
