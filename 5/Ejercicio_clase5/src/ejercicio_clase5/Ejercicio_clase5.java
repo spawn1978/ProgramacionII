@@ -6,6 +6,7 @@
 package ejercicio_clase5;
 
 
+import java.util.Date;
 
 /**
  *
@@ -21,6 +22,20 @@ public class Ejercicio_clase5
     public static void main(String[] args)
     {
         // TODO code application logic here
+        MiClase objeto1 = new MiClase(10,"pepe",new Date(2018,10,05));
+        MiClase objeto2 = new MiClase(0,"juan", new Date());
+        MiClase objeto3 = new MiClase(0,"juan");
+        MiClase objeto4 = new MiClase(objeto1);
+        objeto1.mostrarDatos();
+        objeto3.mostrarDatos();
+        objeto4.mostrarDatos();
+        
+        MiClase objeto5;
+        objeto5=objeto4;
+        objeto5.mostrarDatos();
+        System.out.println(objeto5);
+        System.out.println(objeto4);
+
     }
     
 }
