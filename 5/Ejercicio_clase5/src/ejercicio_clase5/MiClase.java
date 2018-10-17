@@ -41,6 +41,7 @@ public class MiClase
     {
         //Como el "objeto" es de la misma clase puedo ver los atributos privados
         this(objeto._entero,objeto._cadena,objeto._fecha);
+        //objeto._entero=7;// falla de seguridad ;-)
     }
   
     public void establecerValor(int nro)

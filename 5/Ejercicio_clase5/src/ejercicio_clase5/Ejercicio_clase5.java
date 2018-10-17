@@ -28,13 +28,7 @@ public class Ejercicio_clase5
         MiClase objeto4 = new MiClase(objeto1);
         objeto1.mostrarDatos();
         objeto3.mostrarDatos();
-        objeto4.mostrarDatos();
-        
-        MiClase objeto5;
-        objeto5=objeto4;
-        objeto5.mostrarDatos();
-        System.out.println(objeto5);
-        System.out.println(objeto4);
+        objeto4.mostrarDatos();      
 
     }
     
