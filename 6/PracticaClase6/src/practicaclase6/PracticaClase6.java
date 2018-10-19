@@ -18,6 +18,16 @@ public class PracticaClase6
     public static void main(String[] args)
     {
         // TODO code application logic here
+        
+        Alumno unAlumno = new Alumno(1,"Perez Juan","la quiaca 123");       
+        
+        unAlumno.setNotasIngreso(Genericas.cargarVectorInt(3));       
+        unAlumno.calcularPromedio();
+        System.out.println(unAlumno.alumnoAString());
+        
+        Alumno [] vectorAlumnos=new Alumno [2];
+        
+        
     }
     
 }
