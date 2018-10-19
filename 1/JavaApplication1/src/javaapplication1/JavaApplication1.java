@@ -75,6 +75,7 @@ private static final int TAM = 100;
     {
         int retorno=0;
         for (int i = 0; i < cantidad; i++) {
+//        for (int i = 0; i < Numeros.length; i++) { //esta no funciona pq se inicializa en 0
             if( esPar(Numeros[i]) == true )
             {
                 retorno ++;
@@ -214,7 +215,7 @@ private static final int TAM = 100;
     {
         int Numero;               
         Scanner lector = new Scanner(System.in);        
-        System.out.println("Ingrese un Nro: "); //saco datos por la consola
+        System.out.print("Ingrese un Nro: "); //saco datos por la consola
         Numero=lector.nextInt();//tomo datos de la consola
         return Numero;
     }
