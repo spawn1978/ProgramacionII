@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicaclase6;
+package clase7_arraylist;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
  * @author gferrer_mecon
  */
-public class PracticaClase6
+public class Clase7_ArrayList
 {
 
     /**
@@ -19,15 +22,20 @@ public class PracticaClase6
     {
         // TODO code application logic here
         
-        Alumno unAlumno = new Alumno(1,"Perez Juan","la quiaca 123");       
+        ArrayList <Integer> lista;
+        lista = new ArrayList<>();
+        lista.add(7);
+        lista.add(1);
+        lista.add(3);
         
-        unAlumno.setNotasIngreso(Genericas.cargarVectorInt(3));       
-        unAlumno.calcularPromedio();
-        System.out.println(unAlumno.alumnoAString());
+        Collections.sort(lista);
         
-        Alumno [] vectorAlumnos=new Alumno [2];
-
+        for (Integer integer : lista)
+        {
+            System.out.println("Elemento: " + integer );
+        }
         
     }
+   
     
 }
