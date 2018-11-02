@@ -11,7 +11,7 @@ package clase8;
  */
 public class Paciente
 {
-        private String _DNI;
+    private String _DNI;
     private String _Nombre;
 
     public Paciente()
