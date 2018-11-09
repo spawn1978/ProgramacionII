@@ -46,21 +46,23 @@ public class Producto
         }        
         public boolean comparaComestible(Producto unProducto, eTipoComestible tipo)
         {//b) El método comparaComestible devuelve verdadero sólo si el producto pertenece al tipo de comestible con el que se compara
-            boolean retorno=false;
-            if(unProducto._tipo == tipo)
-            {
-                retorno=true;                
-            }
-            return retorno;
+//            boolean retorno=false;
+//            if(unProducto._tipo == tipo)
+//            {
+//                retorno=true;                
+//            }
+//            return retorno;
+            return unProducto._tipo == tipo;
         }
-        public boolean comparaDosProductos(Producto unProducto, Producto otroProducto)
+        public static boolean comparaDosProductos(Producto unProducto, Producto otroProducto)
         { //a) El método comparaDosProductos permite comparar dos productos y devuelva verdadero sólo cuando estos sean iguales
-            boolean retorno=false;
-            if(unProducto._codigoBarras == otroProducto._codigoBarras)
-            {
-                retorno=true;                
-            }
-            return retorno;
+//            boolean retorno=false;
+//            if(unProducto._codigoBarras == otroProducto._codigoBarras)
+//            {
+//                retorno=true;                
+//            }
+//            return retorno;
+              return unProducto._codigoBarras == otroProducto._codigoBarras;
         }
     //</editor-fold>
 }

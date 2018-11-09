@@ -40,12 +40,11 @@ public class Container
                if( !Container.contieneProducto(this, proUno)) 
                {
                    this._listaProductos.add(proUno);
-               }
-                
+               }                
             }
             return retorno;
         }
-        static void mostrar(Container contenedor)
+        public static void mostrar(Container contenedor)
         {//4) Crear un método de clase Mostrar (Container) que muestre los datos del contenedor pasado 
          //por parámetro. Se deberá mostrar también la lista completa de sus productos.
             
@@ -62,7 +61,7 @@ public class Container
             System.out.println("==================================");
         }
                                    
-        static ArrayList<Producto> seleccionarComestible (Container contenedorUno, eTipoComestible tipo)
+        public static ArrayList<Producto> seleccionarComestible (Container contenedorUno, eTipoComestible tipo)
         {//6) El método SeleccionarComestible retornara una lista con todos los productos que pertenecen al tipo indicado.
             ArrayList <Producto> retorna_Lista;
             retorna_Lista= new ArrayList<>();
@@ -77,13 +76,13 @@ public class Container
             return retorna_Lista;
         }
         
-        static boolean contieneProducto(Container unContenedor,Producto unProducto)
+        public static boolean contieneProducto(Container unContenedor,Producto unProducto)
         {//5) El método ContieneProducto que devuelve verdadero sólo si el producto se encuentra en la lista.            
             
             boolean retorno=false;
             for (Producto unProdDeLista : unContenedor._listaProductos)
             {
-                if (unProdDeLista.comparaDosProductos(unProdDeLista, unProducto) )
+                if (Producto.comparaDosProductos(unProdDeLista, unProducto))
                 {
                     retorno=true;
                     break;
