@@ -76,38 +76,65 @@ public class Lavadero
             return this._Vehiculos;        
         }       
 
-    
+        private float getPrecioVehiculo(EVehiculos tipo)
+        {
+            float precio=0;
+            if(tipo == EVehiculos.AUTO)
+            {
+                precio = _precioAuto;
+            }
+            if(tipo == EVehiculos.CAMION)
+            {
+                precio = _precioCamion;
+            }
+            if(tipo == EVehiculos.MOTO)
+            {
+                precio = _precioMoto;
+            }            
+            return precio;            
+        }
         
         public double MostrarTotalFacturado(EVehiculos TipoVehiculo)
-        {
+        {//MostrarTotalFacturado: retornará la ganancia del Lavadero por tipo de vehículo.
             double retorno=0;
+            float precio=getPrecioVehiculo(TipoVehiculo);
             
-            for (Vehiculo unVehiculo : _Vehiculos)
+            for (Vehiculo unVehiculo : _Vehiculos) 
             {
-                
-            }
-            
+                if ( TipoVehiculo == Vehiculo.getTipoVeiculo(unVehiculo) )
+                {
+                    retorno+= precio;
+                }
+            }//fin for            
             return retorno;
         }
         public double MostrarTotalFacturado()
-        {//MostrarTotalFacturado: devolverá la ganancia total del lavadero (Double), dicho método
-        //tendrá una sobrecarga que reciba como parámetro la enumeración EVehiculos (con Auto,
-        //Camión y Moto como enumerados) y retornará la ganancia del Lavadero por tipo de vehículo.
-            
+        {//MostrarTotalFacturado: devolverá la ganancia total del lavadero (Double)
+            double retorno =0;
+            for (Vehiculo unVehiculo : _Vehiculos) 
+            {
+                retorno += getPrecioVehiculo( Vehiculo.getTipoVeiculo(unVehiculo) );
+            }
+            return retorno;
         }
         
 /*
  El método EstaEnLavadero(Lavadero,Vehículo) retornara TRUE, si el vehículo se encuentra
 en el lavadero.
+        
  El método EstaEnLavadero(Vehículo,Lavadero) retorna -1 si no está el vehículo en el
 lavadero, caso contrario, retorna el índice de donde se encuentra dicho vehículo.
+        
  El método AgregarVehiculo, agregara un vehiculo al lavadero siempre y cuando el vehículo
 no se encuentre en el lavadero. Ej. Lavadero.AgregarVehiculo(unLavadero, unAuto);
+        
  El método QuitarVehiculo, quitara un vehiculo al lavadero siempre y cuando el vehículo no
 se encuentre en el lavadero. Ej. unLavadero.QuitarVehiculo(unaMoto);
+        
  Generar un método estático (OrdenarVehiculosPorPatente : int) que reciba dos vehículos y
 retorne un 0 (cero), si ambas patentes son iguales, si la primera patente es ‘mayor’ que la
 segunda, retornará un 1 (uno) y si no, retornará un -1 (menos uno).
+        
  Generar un método de instancia (OrdenarVehiculosPorMarca : int) que reciba dos
 vehículos retorne un 0 (cero), si ambas marcas son iguales, si la primera marca es ‘mayor’
 que la segunda, retornará un 1 (uno) y si no, retornará un -1 (menos uno).

@@ -15,6 +15,7 @@ public class Vehiculo
     private int _cantRuedas;
     private eMarca _marca;
 
+    
     //<editor-fold desc="CONSTRUCTOR">
         public Vehiculo(String _patente, int _cantRuedas, eMarca _marca)
         {
