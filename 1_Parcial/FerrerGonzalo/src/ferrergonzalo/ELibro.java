@@ -12,5 +12,6 @@ package ferrergonzalo;
 public enum ELibro
 {
     MANUAL,
-    NOVELA    
+    NOVELA,
+    TODOS
 }

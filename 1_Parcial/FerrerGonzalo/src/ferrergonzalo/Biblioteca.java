@@ -35,11 +35,25 @@ public class Biblioteca
             boolean retorno=false;
             for (Libro unLibro : this._libros)
             {
-                if(Libro.compararLibros(unLibro, libroBuscar))
+        
+                if ( ( ELibro.MANUAL ==  Libro.getTipoLibro(libroBuscar) )  &&   (Libro.getTipoLibro(unLibro)== ELibro.MANUAL) )
                 {
-                    retorno=true;
-                    break;
+                    if(Manual.compararManuales( (Manual) unLibro, (Manual) libroBuscar) )
+                    {
+                        retorno = true;
+                        break;
+                    }
                 }
+
+                 if ( ( ELibro.NOVELA ==  Libro.getTipoLibro(libroBuscar) )  &&   (Libro.getTipoLibro(unLibro)== ELibro.NOVELA) )
+                {
+                    if(Novela.compararNovelas((Novela) unLibro, (Novela) libroBuscar))
+                    {
+                        retorno = true;
+                        break;
+                    }
+                }
+
             }
             return retorno;
         }
@@ -83,5 +97,32 @@ public class Biblioteca
             return PrecioTotal;
         }
        
+        public String mostrarBiblioteca (Biblioteca unaBiblioteca)
+        {
+            StringBuilder cadena = new StringBuilder();
+            
+                cadena.append(" Capacidad Biblioteca: ").append(unaBiblioteca._capacidad);
+                cadena.append("\n--------------------------\n");
+                for (Libro unLibro : this._libros)
+                {
+                    
+                    if ( Libro.getTipoLibro(unLibro)== ELibro.MANUAL) 
+                     {
+                        cadena.append( Manual.mostrar(unLibro) ) ;
+                     }
+                    
+                     if ( Libro.getTipoLibro(unLibro)== ELibro.NOVELA) 
+                     {
+                         cadena.append ( Novela.mostrar(unLibro) );
+                     }
+                     cadena.append("\n");
+                }
+                cadena.append("\n--------------------------\n");
+                cadena.append("\n Precios Todas las Novelas: ").append(this.getPrecioDeNovelas());
+                cadena.append("\n Precios Todos los Manuales: ").append(this.getPrecioDeManuales());
+                cadena.append("\n Precios Todos: ").append(this.getPrecioTotal());
+                          
+            return cadena.toString();
+        }
     //</editor-fold>
 }
