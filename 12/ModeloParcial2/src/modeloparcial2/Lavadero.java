@@ -6,6 +6,7 @@
 package modeloparcial2;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 /**
@@ -47,6 +48,7 @@ public class Lavadero
         }
     //</editor-fold>
 
+        
     //<editor-fold desc="METODOS">
         private static float genRandom()
         {
@@ -108,6 +110,7 @@ public class Lavadero
             }//fin for            
             return retorno;
         }
+        
         public double MostrarTotalFacturado()
         {//MostrarTotalFacturado: devolverá la ganancia total del lavadero (Double)
             double retorno =0;
@@ -118,12 +121,56 @@ public class Lavadero
             return retorno;
         }
         
-/*
- El método EstaEnLavadero(Lavadero,Vehículo) retornara TRUE, si el vehículo se encuentra
-en el lavadero.
+        public static boolean EstaEnLavadero(Lavadero Lav, Vehiculo vehiculoABuscar)
+        {//El método EstaEnLavadero(Lavadero,Vehículo) retornara TRUE, si el vehículo se encuentra en el lavadero.
+            boolean retorno=false;
+           if( EstaEnLavadero(vehiculoABuscar, Lav ) >= 0 )
+           {
+               retorno=true;
+           }
+            return retorno;
+        }
         
- El método EstaEnLavadero(Vehículo,Lavadero) retorna -1 si no está el vehículo en el
-lavadero, caso contrario, retorna el índice de donde se encuentra dicho vehículo.
+        public static int EstaEnLavadero( Vehiculo vehiculoABuscar , Lavadero Lav)
+        {//El método EstaEnLavadero(Vehículo,Lavadero) retorna -1 si no está el vehículo en el 
+         //lavadero, caso contrario, retorna el índice de donde se encuentra dicho vehículo.
+            int retorno=-1;
+            int pos=0;
+            for (Vehiculo unVehiculo : Lav.getListaVehiculos())            
+            {
+                if( Vehiculo.ComparaVehiculos(unVehiculo, vehiculoABuscar) )
+                {
+                    retorno =pos;
+                    break;
+                }
+                pos++;
+            }
+            return retorno;
+        }      
+               
+         
+        public Comparator<Vehiculo> OrdenarVehiculosPorMarca = ((uno, dos) ->
+        {
+            int retorno = uno.getMarca().toString().compareTo(dos.getMarca().toString());
+
+            if(retorno > 0)
+            {
+                retorno = 1;
+            }
+            else if(retorno < 0)
+            {
+                retorno = -1;
+            }        
+            return retorno;
+        });
+     
+    
+        
+        
+        
+        
+        
+/*
         
  El método AgregarVehiculo, agregara un vehiculo al lavadero siempre y cuando el vehículo
 no se encuentre en el lavadero. Ej. Lavadero.AgregarVehiculo(unLavadero, unAuto);
