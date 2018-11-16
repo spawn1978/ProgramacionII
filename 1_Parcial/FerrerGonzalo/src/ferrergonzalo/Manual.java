@@ -14,15 +14,18 @@ public class Manual  extends Libro
     public ETipo tipo;
 
     //<editor-fold desc="CONSTRUCTOR">
-        public Manual(ETipo tipo)
+
+        
+        public Manual(ETipo _tipo, Autor _autor, float _precio, String _titulo)
         {
-            super();
-            this.tipo = tipo;
+            
+            super(_autor, _precio, _titulo);
+            this.tipo = _tipo;
         }
     //</editor-fold>
     
     //<editor-fold desc="METODOS">
-        public String mostrar( )
+        public  String mostrar( )
         {
             StringBuilder cadena = new StringBuilder();            
                 cadena.append(" Tipo Manual: ").append(this.tipo);

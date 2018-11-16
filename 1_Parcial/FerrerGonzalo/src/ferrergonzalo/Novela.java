@@ -14,14 +14,15 @@ public class Novela extends Libro
     public EGenero genero;
     
     //<editor-fold desc="CONSTRUCTOR">   
-        public Novela(EGenero genero)
+
+        public Novela(EGenero _genero, Autor _autor, float _precio, String _titulo)
         {
-            super();
-            this.genero = genero;
-        }
+            super(_autor, _precio, _titulo);
+            this.genero = _genero;
+        }        
     //</editor-fold>
     //<editor-fold desc="METODOS">
-        public String mostrar( )
+        public  String mostrar( )
         {
             StringBuilder cadena = new StringBuilder();            
                 cadena.append(" Genero: ").append(this.genero);
