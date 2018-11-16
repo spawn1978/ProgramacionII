@@ -18,13 +18,24 @@ public class Libro
     protected float _precio;    
     protected String _titulo;
     
-    //<editor-fold desc="CONSTRUCTOR">
-        public Libro(Autor _autor, int _cantPaginas, float _precio, String _titulo)
+    //<editor-fold desc="CONSTRUCTOR">   
+   
+        public Libro()
         {
-            this._autor = _autor;
-            this._cantPaginas = _cantPaginas;
-            this._precio = _precio;
-            this._titulo = _titulo;
+            this._cantPaginas = Libro.generadorDePaginas();
+        }
+
+        public Libro(Autor autor, String titulo)
+        {
+            this();
+            this._autor = _autor;            
+            this._titulo = _titulo;            
+        }
+
+        public Libro(Autor autor, float precio, String titulo)
+        {
+            this(autor,titulo);
+            this._precio = _precio;            
         }
     //</editor-fold>
     
@@ -32,6 +43,10 @@ public class Libro
         public int getCantidadPaginas()
         {            
             return this._cantPaginas;
+        }
+        public float getPrecio()
+        {
+            return this._precio;
         }
         
         private static int generadorDePaginas()
@@ -41,7 +56,12 @@ public class Libro
             int Nro = MIN + semilla.nextInt() * (MAX - MIN);
             return Nro;
         }
-        
+        public static boolean compararLibros ( Libro unLibro, Libro otroLibro)
+        {
+            boolean igualTitulo= unLibro._titulo == otroLibro._titulo;
+            boolean igualAutor= unLibro._autor == otroLibro._autor;
+            return  igualTitulo == igualAutor;
+        }
     //</editor-fold>
     
 }
