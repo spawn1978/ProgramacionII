@@ -13,6 +13,15 @@ public class Autor
 {
     private String _Apellido;
     private String _Nombre;
+
+    //<editor-fold desc="CONSTRUCTOR">
+        public Autor(String _Apellido, String _Nombre)
+        {
+            this._Apellido = _Apellido;
+            this._Nombre = _Nombre;
+        }
+    //</editor-fold>
+        
     
     //<editor-fold desc="METODOS">
     public static boolean compararAutores( Autor unAutor, Autor otroAutor)
