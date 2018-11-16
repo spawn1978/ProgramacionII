@@ -43,6 +43,16 @@ public class Biblioteca
             }
             return retorno;
         }
+        public boolean agregarLibro (Libro libroAdd)
+        {
+            boolean retorno=false;
+            if(this._capacidad > this._libros.size() && !estaEnBiblioteca(libroAdd) )
+            {
+                this._libros.add(libroAdd);
+                retorno=true;
+            }
+            return retorno;
+        }
         
     //</editor-fold>
 }
