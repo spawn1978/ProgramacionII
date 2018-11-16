@@ -71,7 +71,23 @@ public class Libro
                 cadena.append("\n Paginas: ").append(unLibro._cantPaginas);
                 cadena.append("\n Precio: ").append(unLibro._precio);                
             return cadena.toString();
+        }        
+        
+        public static ELibro getTipoLibro(Libro unLibro)
+        {
+            ELibro tipo = null;
+            if(unLibro instanceof Manual)
+            {
+                tipo=ELibro.MANUAL;  
+            }
+            if(unLibro instanceof Novela)
+            {
+                tipo=ELibro.NOVELA;  
+            }
+            return tipo;
         }
+                
+        
     //</editor-fold>
     
 }

@@ -33,7 +33,7 @@ public class Biblioteca
         private boolean estaEnBiblioteca(Libro libroBuscar)
         {
             boolean retorno=false;
-            for (Libro unLibro : _libros)
+            for (Libro unLibro : this._libros)
             {
                 if(Libro.compararLibros(unLibro, libroBuscar))
                 {
@@ -54,5 +54,34 @@ public class Biblioteca
             return retorno;
         }
         
+        private float obtenerPrecio(ELibro TipoLibro)
+        {
+            float retorno=0;
+            for (Libro unLibro : this._libros)
+            {
+                if(Libro.getTipoLibro(unLibro)== TipoLibro)
+                {
+                   retorno+=  unLibro.getPrecio();
+                }
+            }
+            return retorno;
+        }        
+        
+        public float getPrecioDeManuales()
+        {
+            return obtenerPrecio(ELibro.MANUAL);
+        }
+        
+        public float getPrecioDeNovelas()
+        {                      
+            return obtenerPrecio(ELibro.NOVELA);
+        }
+        
+        public float getPrecioTotal()
+        {
+            float PrecioTotal = obtenerPrecio(ELibro.NOVELA) + obtenerPrecio(ELibro.MANUAL);
+            return PrecioTotal;
+        }
+       
     //</editor-fold>
 }
