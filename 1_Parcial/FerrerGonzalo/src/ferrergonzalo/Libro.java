@@ -19,7 +19,6 @@ public class Libro
     protected String _titulo;
     
     //<editor-fold desc="CONSTRUCTOR">   
-   
         public Libro()
         {
             this._cantPaginas = Libro.generadorDePaginas();
@@ -37,8 +36,7 @@ public class Libro
             this(autor,titulo);
             this._precio = _precio;            
         }
-    //</editor-fold>
-    
+    //</editor-fold>    
     //<editor-fold desc="METODOS">
         public int getCantidadPaginas()
         {            
@@ -61,6 +59,18 @@ public class Libro
             boolean igualTitulo= unLibro._titulo == otroLibro._titulo;
             boolean igualAutor= unLibro._autor == otroLibro._autor;
             return  igualTitulo == igualAutor;
+        }        
+            
+        public static String mostrar( Libro unLibro)
+        {
+            StringBuilder cadena = new StringBuilder();
+            
+                cadena.append(" Titulo: ").append(unLibro._titulo);
+                cadena.append("\n--------------------------\n");
+                cadena.append("\n Autor: ").append(  Autor.mostrarAutor(unLibro._autor) );               
+                cadena.append("\n Paginas: ").append(unLibro._cantPaginas);
+                cadena.append("\n Precio: ").append(unLibro._precio);                
+            return cadena.toString();
         }
     //</editor-fold>
     
