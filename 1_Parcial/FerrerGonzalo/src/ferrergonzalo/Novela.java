@@ -25,10 +25,11 @@ public class Novela extends Libro
         public  String mostrar( )
         {
             StringBuilder cadena = new StringBuilder();            
+                //cadena.append(" Genero: ").append(this.genero);
                 cadena.append(" Genero: ").append(this.genero);
-                cadena.append("\n--------------------------\n");
                 cadena.append(Libro.mostrar(this));
             return cadena.toString();
+
         }
         public static boolean compararNovelas( Novela unaNovela, Novela otraNovela) 
         {

@@ -102,27 +102,23 @@ public class Biblioteca
             StringBuilder cadena = new StringBuilder();
             
                 cadena.append(" Capacidad Biblioteca: ").append(unaBiblioteca._capacidad);
-                cadena.append("\n--------------------------\n");
+                cadena.append("\n======================\n");
                 for (Libro unLibro : unaBiblioteca._libros)
-                {
-                    
-                    
+                {                      
                     if ( Libro.getTipoLibro(unLibro)== ELibro.MANUAL) 
                      {
                          Manual temp=(Manual) unLibro;
                          cadena.append( temp.mostrar() ) ;
-                        //cadena.append( (Manual) unLibro.mostrar() ) ;
                      }
                     
                      if ( Libro.getTipoLibro(unLibro)== ELibro.NOVELA) 
                      {
                          Novela temp= (Novela) unLibro;
                          cadena.append ( temp.mostrar() );
-                         //cadena.append ( (Novela) unLibro.mostrar() );
                      }
-                     cadena.append("\n");
+                     cadena.append("\n-----------------\n");
                 }
-                cadena.append("\n--------------------------\n");
+                cadena.append("======================");
                 cadena.append("\n Precios Todas las Novelas: ").append(unaBiblioteca.getPrecioDeNovelas());
                 cadena.append("\n Precios Todos los Manuales: ").append(unaBiblioteca.getPrecioDeManuales());
                 cadena.append("\n Precios Todos: ").append(unaBiblioteca.getPrecioTotal());

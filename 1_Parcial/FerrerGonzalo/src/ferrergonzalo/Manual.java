@@ -17,8 +17,7 @@ public class Manual  extends Libro
 
         
         public Manual(ETipo _tipo, Autor _autor, float _precio, String _titulo)
-        {
-            
+        {            
             super(_autor, _precio, _titulo);
             this.tipo = _tipo;
         }
@@ -29,7 +28,6 @@ public class Manual  extends Libro
         {
             StringBuilder cadena = new StringBuilder();            
                 cadena.append(" Tipo Manual: ").append(this.tipo);
-                cadena.append("\n--------------------------\n");
                 cadena.append(Libro.mostrar(this));
             return cadena.toString();
         }

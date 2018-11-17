@@ -27,14 +27,14 @@ public class Libro
         public Libro(Autor autor, String titulo)
         {
             this();
-            this._autor = _autor;            
-            this._titulo = _titulo;            
+            this._autor = autor;            
+            this._titulo = titulo;            
         }
 
         public Libro(Autor autor, float precio, String titulo)
         {
             this(autor,titulo);
-            this._precio = _precio;            
+            this._precio = precio;            
         }
     //</editor-fold>    
     //<editor-fold desc="METODOS">
@@ -50,8 +50,8 @@ public class Libro
         private static int generadorDePaginas()
         {
             int MIN=10; int MAX=580;
-            Random semilla=new Random();        
-            int Nro = MIN + semilla.nextInt() * (MAX - MIN);
+            Random semilla=new Random();
+            int Nro = semilla.nextInt( MAX + 1 - MIN) ;
             return Nro;
         }
         public static boolean compararLibros ( Libro unLibro, Libro otroLibro)
@@ -65,8 +65,8 @@ public class Libro
         {
             StringBuilder cadena = new StringBuilder();
             
-                cadena.append(" Titulo: ").append(unLibro._titulo);
-                cadena.append("\n--------------------------\n");
+                //cadena.append("\n--------------------------\n");
+                cadena.append("\n Titulo: ").append(unLibro._titulo);                
                 cadena.append("\n Autor: ").append(  Autor.mostrarAutor(unLibro._autor) );               
                 cadena.append("\n Paginas: ").append(unLibro._cantPaginas);
                 cadena.append("\n Precio: ").append(unLibro._precio);                
