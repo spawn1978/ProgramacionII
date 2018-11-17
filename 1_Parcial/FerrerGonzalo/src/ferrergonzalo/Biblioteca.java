@@ -38,20 +38,28 @@ public class Biblioteca
         
                 if ( ( ELibro.MANUAL ==  Libro.getTipoLibro(libroBuscar) )  &&   (Libro.getTipoLibro(unLibro)== ELibro.MANUAL) )
                 {
+                    retorno = Manual.compararManuales( (Manual) unLibro, (Manual) libroBuscar);
+                    break;
+                    /*
                     if(Manual.compararManuales( (Manual) unLibro, (Manual) libroBuscar) )
                     {
                         retorno = true;
                         break;
                     }
+*/
                 }
 
                  if ( ( ELibro.NOVELA ==  Libro.getTipoLibro(libroBuscar) )  &&   (Libro.getTipoLibro(unLibro)== ELibro.NOVELA) )
                 {
+                    retorno = Novela.compararNovelas((Novela) unLibro, (Novela) libroBuscar);
+                    break;
+                    /*
                     if(Novela.compararNovelas((Novela) unLibro, (Novela) libroBuscar))
                     {
                         retorno = true;
                         break;
                     }
+                    */
                 }
 
             }
