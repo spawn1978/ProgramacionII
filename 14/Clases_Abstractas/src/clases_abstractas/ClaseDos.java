@@ -20,7 +20,7 @@ public class ClaseDos extends ClaseUno
     {
         StringBuilder cadena = new StringBuilder();
             cadena.append(super.mostrarUno());
-            cadena.append("claseDos");
+            cadena.append("claseDos\n");
         return cadena.toString();
     }
     public int getDos()

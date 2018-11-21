@@ -18,6 +18,12 @@ public class Clases_Abstractas
     public static void main(String[] args)
     {
         // TODO code application logic here
+        
+        ClaseDos dos=new ClaseDos("pepe", 10);
+        ClaseTres tres=new ClaseTres(dos, 20);
+        
+        System.out.println(tres.mostrarTres());
+        
     }
     
 }

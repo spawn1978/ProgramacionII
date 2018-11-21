@@ -21,7 +21,7 @@ public class ClaseUno
     public String mostrarUno()
     {
         StringBuilder cadena = new StringBuilder();
-            cadena.append("claseUno");
+            cadena.append("claseUno \n");
         return cadena.toString();
     }
     public String getUno()
