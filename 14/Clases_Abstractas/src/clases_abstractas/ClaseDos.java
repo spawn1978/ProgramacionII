@@ -15,10 +15,23 @@ public class ClaseDos extends ClaseUno
         super(atributoUno);
         this.atrubutoDos=atrubutoDos;
     }
+   
+    @Override public String toString()
+    {
+        return super.toString()+" clase2";
+    }
+   
+    @Override public String mostrar()
+    {
+         StringBuilder cadena = new StringBuilder();
+            //cadena.append(super.mostrarUno());
+            cadena.append("claseDos\n");
+        return cadena.toString();
+    }
     
     public String mostrarDos()
     {
-        StringBuilder cadena = new StringBuilder();
+        StringBuilder cadena = new StringBuilder();            
             cadena.append(super.mostrarUno());
             cadena.append("claseDos\n");
         return cadena.toString();

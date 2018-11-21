@@ -9,7 +9,7 @@ package clases_abstractas;
  *
  * @author gferrer_mecon
  */
-public class ClaseUno        
+abstract public class ClaseUno        
 {
     protected String atributoUno;
 
@@ -18,12 +18,21 @@ public class ClaseUno
         this.atributoUno = atributoUno;
     }
     
+    abstract public String mostrar();
+    
     public String mostrarUno()
     {
         StringBuilder cadena = new StringBuilder();
             cadena.append("claseUno \n");
         return cadena.toString();
+        
     }
+    
+    @Override public String toString()
+    {
+        return "clase1";
+    }
+    
     public String getUno()
     {
         return this.atributoUno;
