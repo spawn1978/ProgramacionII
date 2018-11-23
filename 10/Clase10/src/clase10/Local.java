@@ -44,10 +44,14 @@ public class Local extends Llamada
     @Override public String mostrar()
     {        
         StringBuilder sms = new StringBuilder();
-        sms.append(super.mostrar());
+        //sms.append(super.mostrar());
+        sms.append(super.toString());
+        
         sms.append(" Costo llamada Local: ").append(this.getCostoLlamada());
         return sms.toString();        
     }
+    
+ 
     
     @Override public boolean equals(Object unaLlamada)
     {

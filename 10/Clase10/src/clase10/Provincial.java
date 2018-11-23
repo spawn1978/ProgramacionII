@@ -70,7 +70,8 @@ public class Provincial extends Llamada
         @Override public String mostrar()
         {                       
             StringBuilder sms = new StringBuilder();
-            sms.append(super.mostrar());
+            //sms.append(super.mostrar());
+            sms.append(super.toString());
             sms.append(" Costo llamada Provincial: ").append(this.getCostoLlamada());
             sms.append("  Franja: ").append(this._franjaHoraria);
             return sms.toString();

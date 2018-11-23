@@ -42,21 +42,30 @@ abstract public class Llamada
 
     //</editor-fold>
     //<editor-fold desc="METODOS">
-        abstract public float getCostoLlamada();
+        abstract public float getCostoLlamada();        
+        abstract  protected  String mostrar();
+//        protected  String mostrar()
+//        {
+//            StringBuilder sms = new StringBuilder();
+//            sms.append("LLamada de: ").append(this._nroOrigen);
+//            sms.append(" TO ").append(this._nroDestino);
+//            sms.append(" Duracion: ").append(this._duracion);
+//            
+//            return sms.toString();
+//        }        
         
-        protected String mostrar()
+//        @Override public String toString()
+//        {
+//            return this.mostrar();
+//        }
+
+        @Override public String toString()
         {
             StringBuilder sms = new StringBuilder();
             sms.append("LLamada de: ").append(this._nroOrigen);
             sms.append(" TO ").append(this._nroDestino);
             sms.append(" Duracion: ").append(this._duracion);
-            
             return sms.toString();
-        }        
-        
-        @Override public String toString()
-        {
-            return this.mostrar();
         }
         
         public int OrdenarPorDuracion(Llamada uno, Llamada dos)
