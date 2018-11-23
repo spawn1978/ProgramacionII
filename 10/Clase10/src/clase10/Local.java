@@ -26,7 +26,7 @@ public class Local extends Llamada
     }
     //</editor-fold>
     //<editor-fold desc="PROPIEDADES">
-        public float CostoLlamada()
+        @Override public float getCostoLlamada()
         {
             float retorno;
             retorno=CalcularCosto();
@@ -41,15 +41,19 @@ public class Local extends Llamada
         return retorno;
     }
 
-    @Override
-    public void mostrar()
-    {
-        super.mostrar();
+    @Override public String mostrar()
+    {        
         StringBuilder sms = new StringBuilder();
-        sms.append(" Costo llamada Local: ").append(this.CostoLlamada());
-        System.out.println(sms.toString());
-        
+        sms.append(super.mostrar());
+        sms.append(" Costo llamada Local: ").append(this.getCostoLlamada());
+        return sms.toString();        
     }
+    
+    @Override public boolean equals(Object unaLlamada)
+    {
+        return unaLlamada instanceof Local;
+    }
+    
     //</editor-fold>
     
 }

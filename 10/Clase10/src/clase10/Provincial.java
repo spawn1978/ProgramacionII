@@ -24,7 +24,33 @@ public class Provincial extends Llamada
         {
             super(_duracion, _nroDestino, _nroOrigen);
             this._franjaHoraria=franja;
-            switch(franja)
+//            switch(franja)
+//            {
+//                case Franja_1:
+//                    this._costo = 0.99F;
+//                    break;
+//                case Franja_2:
+//                    this._costo = 1.25F;
+//                    break;
+//                case Franja_3:
+//                    this._costo = 0.66F;
+//                    break;
+//                default:
+//                    this._costo = 0.0F;
+//            }
+        }
+    //</editor-fold>
+      @Override public float getCostoLlamada()
+      {
+          float retorno;
+          retorno=CalcularCosto();
+          return retorno;
+      }
+    //<editor-fold desc="METODOS">
+       private float CalcularCosto()
+       {
+           float retorno;
+            switch(this._franjaHoraria)
             {
                 case Franja_1:
                     this._costo = 0.99F;
@@ -38,29 +64,21 @@ public class Provincial extends Llamada
                 default:
                     this._costo = 0.0F;
             }
-        }
-    //</editor-fold>
-      public float CostoLlamada()
-      {
-          float retorno;
-          retorno=CalcularCosto();
-          return retorno;
-      }
-    //<editor-fold desc="METODOS">
-       private float CalcularCosto()
-       {
-           float retorno;
            retorno=this._duracion * this._costo;
            return retorno;
        }
-        @Override
-        public void mostrar()
-        {                        
-            super.mostrar();
+        @Override public String mostrar()
+        {                       
             StringBuilder sms = new StringBuilder();
-            sms.append(" Costo llamada Provincial: ").append(this.CostoLlamada());
+            sms.append(super.mostrar());
+            sms.append(" Costo llamada Provincial: ").append(this.getCostoLlamada());
             sms.append("  Franja: ").append(this._franjaHoraria);
-            System.out.println(sms.toString());          
+            return sms.toString();
+        }
+        
+        @Override public boolean equals(Object unaLlamada)
+        {
+            return unaLlamada instanceof Local;
         }
     //</editor-fold>
     

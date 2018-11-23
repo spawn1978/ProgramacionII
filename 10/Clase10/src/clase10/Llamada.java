@@ -9,7 +9,7 @@ package clase10;
  *
  * @author gferrer_mecon
  */
-public class Llamada
+abstract public class Llamada
 {
     protected float _duracion;
     protected String _nroDestino;
@@ -42,15 +42,23 @@ public class Llamada
 
     //</editor-fold>
     //<editor-fold desc="METODOS">
-        public void mostrar()
+        abstract public float getCostoLlamada();
+        
+        protected String mostrar()
         {
             StringBuilder sms = new StringBuilder();
             sms.append("LLamada de: ").append(this._nroOrigen);
             sms.append(" TO ").append(this._nroDestino);
             sms.append(" Duracion: ").append(this._duracion);
             
-            System.out.print(sms.toString());
+            return sms.toString();
+        }        
+        
+        @Override public String toString()
+        {
+            return this.mostrar();
         }
+        
         public int OrdenarPorDuracion(Llamada uno, Llamada dos)
         {
             int retorno=-1;
@@ -66,6 +74,12 @@ public class Llamada
                 }
             }            
             return retorno;
+        }
+        public boolean compararLlamadas(Llamada unaLlamada, Llamada otraLlamada)
+        {
+            boolean origenIgual =  unaLlamada._nroOrigen == otraLlamada._nroOrigen ;
+            boolean destinoIgual = unaLlamada._nroDestino == otraLlamada._nroDestino ;
+            return origenIgual == destinoIgual;
         }
     //</editor-fold>
 

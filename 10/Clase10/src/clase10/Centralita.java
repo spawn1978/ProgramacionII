@@ -65,19 +65,23 @@ public class Centralita
         cadena.append("Detalle de Llamadas").append("\n");
         cadena.append("---------------------").append("\n");
         
-        System.out.println(cadena.toString());
+        //System.out.println(cadena.toString());
         
         for (Llamada unaLlamada : _listaDeLlamadas)
         {
             if(unaLlamada instanceof Local)
             {
-                ((Local) unaLlamada).mostrar();
+                //((Local) unaLlamada).mostrar();
+                cadena.append( ( (Local) unaLlamada).mostrar() );
             }
             else if(unaLlamada instanceof Provincial)
             {
-                ((Provincial) unaLlamada).mostrar();
+                //((Provincial) unaLlamada).mostrar();
+                cadena.append(  ((Provincial) unaLlamada).mostrar() );
             }
+            cadena.append("\n---\n");
         }
+        System.out.println(cadena.toString());
     }
      
     private float CalcularGanancia(E_TipoLlamada tipo)
@@ -88,11 +92,11 @@ public class Centralita
         {
             if(unaLlamada instanceof Local && tipo != E_TipoLlamada.Provincial)
             {
-                ganancia += ((Local) unaLlamada).CostoLlamada();
+                ganancia += ((Local) unaLlamada).getCostoLlamada();
             }
             else if(unaLlamada instanceof Provincial && tipo != E_TipoLlamada.Local)
             {
-                ganancia += ((Provincial) unaLlamada).CostoLlamada();
+                ganancia += ((Provincial) unaLlamada).getCostoLlamada();
             }
         }
         
