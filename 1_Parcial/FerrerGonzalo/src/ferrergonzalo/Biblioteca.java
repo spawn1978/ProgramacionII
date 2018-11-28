@@ -35,18 +35,11 @@ public class Biblioteca
             boolean retorno=false;
             for (Libro unLibro : this._libros)
             {
-        
-                if ( ( ELibro.MANUAL ==  Libro.getTipoLibro(libroBuscar) )  &&   (Libro.getTipoLibro(unLibro)== ELibro.MANUAL) )
+                
+                if (  Libro.getTipoLibro2(libroBuscar, ELibro.MANUAL)   &&    Libro.getTipoLibro2(unLibro, ELibro.MANUAL)  )                
                 {
                     retorno = Manual.compararManuales( (Manual) unLibro, (Manual) libroBuscar);
-                    break;
-                    /*
-                    if(Manual.compararManuales( (Manual) unLibro, (Manual) libroBuscar) )
-                    {
-                        retorno = true;
-                        break;
-                    }
-*/
+                    break; 
                 }
 
                  if ( ( ELibro.NOVELA ==  Libro.getTipoLibro(libroBuscar) )  &&   (Libro.getTipoLibro(unLibro)== ELibro.NOVELA) )

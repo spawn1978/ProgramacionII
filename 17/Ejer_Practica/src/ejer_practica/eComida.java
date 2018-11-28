@@ -11,5 +11,8 @@ package ejer_practica;
  */
 public enum eComida
 {
-    chaucha
+    chaucha,
+    doggy,
+    pescado,
+    whisska
 }

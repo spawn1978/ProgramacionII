@@ -13,4 +13,5 @@ public interface iComportamiento
 {
     public void alimentarse(eComida comida);
     public void dormir(int tiempoDeSueño);
+    
 }

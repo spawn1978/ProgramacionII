@@ -76,6 +76,7 @@ public class Libro
         public static ELibro getTipoLibro(Libro unLibro)
         {
             ELibro tipo = null;
+            
             if(unLibro instanceof Manual)
             {
                 tipo=ELibro.MANUAL;  
@@ -87,7 +88,15 @@ public class Libro
             return tipo;
         }
                 
+        public static boolean getTipoLibro2(Libro unLibro, ELibro tipoClase)
+        {                       
+            return unLibro.getClass().getSimpleName().equalsIgnoreCase(tipoClase.toString());            
+        }
         
+        public static boolean getTipoLibro2(Libro unLibro, String NombreClase)
+        {                       
+            return unLibro.getClass().getSimpleName().equalsIgnoreCase(NombreClase);            
+        }
     //</editor-fold>
     
 }
