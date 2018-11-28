@@ -111,7 +111,7 @@ public class Biblioteca
                          Manual temp=(Manual) unLibro;
                          cadena.append( temp.mostrar() ) ;
                      }
-                    
+                     
                      if ( Libro.getTipoLibro(unLibro)== ELibro.NOVELA) 
                      {
                          Novela temp= (Novela) unLibro;
