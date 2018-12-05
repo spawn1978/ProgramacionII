@@ -27,8 +27,8 @@ public class Libro
         public Libro(Autor autor, String titulo)
         {
             this();
-            this._autor = autor;            
-            this._titulo = titulo;            
+            this._autor = _autor;            
+            this._titulo = _titulo;            
         }
 
         public Libro(Autor autor, float precio, String titulo)
